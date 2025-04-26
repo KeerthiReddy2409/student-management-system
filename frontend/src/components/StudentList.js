@@ -45,7 +45,7 @@ const StudentList = () => {
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this student?')) {
       try {
-        await axios.delete(`http://localhost:5000/api/students/${id}`);
+        await axios.delete(`https://student-management-system-backend-g9lw.onrender.com/api/students/${id}`);
         toast.success('Student deleted successfully');
         fetchStudents();
       } catch (err) {
