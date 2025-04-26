@@ -62,7 +62,7 @@ const EditStudent = () => {
     e.preventDefault();
     
     try {
-      await axios.put(`http://localhost:5000/api/students/${id}`, formData);
+      await axios.put(`https://student-management-system-backend-g9lw.onrender.com/api/students/${id}`, formData);
       toast.success('Student updated successfully');
       navigate('/students');
     } catch (err) {
