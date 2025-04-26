@@ -23,7 +23,7 @@ const EditStudent = () => {
   useEffect(() => {
     const fetchStudent = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/students/${id}`);
+        const res = await axios.get(`https://student-management-system-backend-g9lw.onrender.com/api/students/${id}`);
         const studentData = res.data;
         
         // Format date to YYYY-MM-DD for date input
