@@ -1,4 +1,6 @@
-/* App.css - Enhanced UI styling */
+/* App.css - Bootstrap-enhanced responsive styling */
+@import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css');
+
 body {
   font-family: 'Poppins', 'Roboto', sans-serif;
   line-height: 1.6;
@@ -8,10 +10,10 @@ body {
   color: #333;
 }
 
-.container {
-  max-width: 1200px;
+.container-fluid {
+  padding: 0 15px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 20px;
 }
 
 /* Modern Navigation */
@@ -28,9 +30,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+  width: 100%;
+  padding: 0 15px;
 }
 
 .nav-logo {
@@ -56,7 +57,7 @@ body {
 }
 
 .nav-item {
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 .nav-link {
@@ -72,10 +73,14 @@ body {
   transform: translateY(-2px);
 }
 
+.nav-link.active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
 /* Home Page */
 .home {
   text-align: center;
-  padding: 60px 20px;
+  padding: 40px 20px;
   background: linear-gradient(to bottom right, #f0f4f8, #e1e8ed);
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -89,18 +94,19 @@ body {
 }
 
 .home p {
-  max-width: 600px;
+  max-width: 100%;
   margin: 0 auto 40px;
   color: #5d6778;
   font-size: 1.1rem;
 }
 
-/* Button Styles */
+/* Button Styles - Using Bootstrap classes with custom styles */
 .buttons {
   margin-top: 30px;
   display: flex;
   justify-content: center;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .btn {
@@ -178,7 +184,7 @@ body {
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  padding: 30px;
+  padding: 20px;
   margin-top: 20px;
 }
 
@@ -191,7 +197,7 @@ body {
   border-bottom: 1px solid #eee;
 }
 
-/* Table Styles */
+/* Table Styles - Now fully responsive with Bootstrap */
 .table-responsive {
   overflow-x: auto;
   margin-top: 25px;
@@ -204,13 +210,15 @@ body {
   border-collapse: collapse;
   margin-top: 0;
   border: 1px solid #eee;
+  table-layout: auto;
 }
 
 .table th,
 .table td {
-  padding: 14px 18px;
+  padding: 10px 12px;
   text-align: left;
   border-bottom: 1px solid #e9ecef;
+  vertical-align: middle;
 }
 
 .table th {
@@ -218,6 +226,7 @@ body {
   font-weight: 600;
   color: #495057;
   border-bottom: 2px solid #dee2e6;
+  white-space: nowrap;
 }
 
 .table tr:hover {
@@ -249,20 +258,20 @@ body {
   color: #e74c3c;
 }
 
-/* Form Styling */
+/* Form Styling - Enhanced for bootstrap responsiveness */
 .form-group {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .form-row {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  margin-bottom: 0;
 }
 
 .form-row .form-group {
-  flex: 1;
-  min-width: 250px;
+  flex: 1 1 250px;
 }
 
 .form-group label {
@@ -295,14 +304,12 @@ body {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
-  /* padding: 10px 0; */
 }
 
 .form-check input {
-  margin: 10px ,10px;
+  margin-right: 10px;
   width: 18px;
   height: 18px;
-  
 }
 
 .form-check label {
@@ -321,6 +328,11 @@ small {
   display: flex;
   gap: 15px;
   margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.form-buttons .btn {
+  min-width: 100px;
 }
 
 /* Loading Animation */
@@ -362,84 +374,44 @@ small {
 /* Action Button Group */
 .action-buttons {
   display: flex;
-  gap: 8px;
+  gap: 5px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-  .container {
-    padding: 15px;
-  }
-  
-  .form-row {
-    flex-direction: column;
-    gap: 0;
-  }
-  
-  .buttons {
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .btn {
-    width: 100%;
-  }
+.action-buttons .btn {
+  margin-bottom: 5px;
 }
-.filters {
+
+/* List Header - Responsive layout */
+.list-header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
-  padding: 10px;
-  background-color: #f8f9fa;
-  border-radius: 5px;
-}
-
-.sort-filters, .status-filter {
-  display: flex;
   align-items: center;
-  gap: 10px;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
 }
 
-.sort-btn {
-  padding: 5px 10px;
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  cursor: pointer;
+.list-header p {
+  margin: 0;
 }
 
-.sort-btn.active {
-  background-color: #e9ecef;
-  font-weight: bold;
-}
-
-.status-select {
-  padding: 5px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-}
-
-.sortable-header {
-  cursor: pointer;
-  user-select: none;
-}
-
-.sortable-header:hover {
-  background-color: #f1f1f1;
-}
-/* Search and Filter Styles */
+/* Search and Filter - Responsive design */
 .search-container {
   display: flex;
   gap: 10px;
-  margin: 15px 0px;
+  margin: 15px 0;
+  flex-wrap: wrap;
 }
 
 .search-input {
-  flex: 1;
+  flex: 1 1 200px;
   padding: 8px 12px;
   border: 1px solid #ced4da;
   border-radius: 4px;
   font-size: 16px;
+  min-width: 0; /* Important for flex items */
 }
 
 .advanced-filters-panel {
@@ -472,10 +444,12 @@ small {
   display: flex;
   align-items: center;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .year-range input {
-  flex: 1;
+  flex: 1 1 100px;
+  min-width: 0;
 }
 
 .year-range span {
@@ -486,4 +460,124 @@ small {
   margin-bottom: 15px;
   color: #6c757d;
   font-style: italic;
+}
+
+/* Sort Controls - Responsive design */
+.sort-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.sort-btn {
+  padding: 5px 10px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 0.9rem;
+}
+
+.sort-btn.active {
+  background-color: #e9ecef;
+  font-weight: bold;
+}
+
+.sortable-header {
+  cursor: pointer;
+  user-select: none;
+}
+
+.sortable-header:hover {
+  background-color: #f1f1f1;
+}
+
+/* Responsive Breakpoints - Mobile first approach */
+@media (max-width: 576px) {
+  .nav-container {
+    flex-direction: column;
+    padding: 10px;
+  }
+  
+  .nav-menu {
+    margin-top: 15px;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .nav-item {
+    margin: 0 5px;
+  }
+  
+  .nav-link {
+    padding: 8px 10px;
+    font-size: 0.9rem;
+  }
+  
+  .home h1 {
+    font-size: 1.8rem;
+  }
+  
+  .table th, 
+  .table td {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+  
+  .form-buttons {
+    flex-direction: column;
+  }
+  
+  .form-buttons .btn {
+    width: 100%;
+  }
+  
+  .student-list h2,
+  .add-student h2,
+  .edit-student h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .nav-link {
+    padding: 8px 12px;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .action-buttons .btn {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+  
+  .form-buttons .btn {
+    flex: 1;
+  }
+}
+
+@media (max-width: 992px) {
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .sort-controls span {
+    display: none;
+  }
+  
+  .list-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .list-header .btn {
+    width: 100%;
+  }
 }
