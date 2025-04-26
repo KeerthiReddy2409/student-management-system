@@ -31,7 +31,7 @@ const StudentList = () => {
 
   const fetchStudents = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/students');
+      const res = await axios.get('https://student-management-system-backend-g9lw.onrender.com/api/students');
       setStudents(res.data);
       setFilteredStudents(res.data);
       setLoading(false);
