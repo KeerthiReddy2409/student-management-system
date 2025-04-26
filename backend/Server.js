@@ -6,8 +6,15 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+// Allow CORS from your frontend URL
+const frontendURL = 'https://student-management-system-frontend-final.onrender.com';  
+
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: frontendURL,  // Allow only this domain
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],  // Allow specific HTTP methods if needed
+  credentials: true,  // Allow cookies (if you need them)
+}));
 app.use(express.json());
 
 // MongoDB Connection
