@@ -29,7 +29,7 @@ const AddStudent = () => {
     e.preventDefault();
     
     try {
-      await axios.post('http://localhost:5000/api/students', formData);
+      await axios.post('https://student-management-system-backend-g9lw.onrender.com', formData);
       toast.success('Student added successfully');
       navigate('/students');
     } catch (err) {
